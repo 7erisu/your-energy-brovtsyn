@@ -1,44 +1,110 @@
 .header {
-  padding: 20px 0;
+  padding-top: 20px;
+  margin-bottom: 80px;
 }
-.nav {
+
+.header-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
-.nav-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
+.header-logo-img {
+  display: block;
+  width: 132px;
+  height: 24px;
 }
-.nav-list {
+
+.header-nav {
+  display: none;
+}
+
+.header-nav-pill {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  background-color: var(--bg-dark);
+  border-radius: var(--radius-nav);
+  padding: var(--space-200);
+  gap: 0;
 }
-.nav-link {
-  position: relative;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
+
+.header-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-150) var(--space-300);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  color: var(--text-light);
+  border-radius: var(--radius-btn);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+
+.header-nav-link.is-active {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
 }
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  width: 110%;
-  height: 4px;
-  border-radius: 4px;
-  transform-origin: center;
-  animation: stretch 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 200ms both;
+
+.header-socials {
+  display: none;
+  gap: var(--space-300);
+  align-items: center;
 }
-.nav-link.active::after {
-  background: #747bff;
+
+.header-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-200);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-social);
+  color: var(--text-primary);
+  transition: opacity var(--transition);
 }
+
+.header-social-link img,
+.header-social-link svg {
+  opacity: 0.8;
+}
+
+.header-social-link:hover img,
+.header-social-link:hover svg {
+  opacity: 1;
+}
+
+.header-burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    padding-top: var(--space-600);
+    margin-bottom: 100px;
+  }
+
+  .header-nav {
+    display: block;
+  }
+
+  .header-nav-pill {
+    padding: var(--space-200) 51px;
+  }
+
+  .header-burger {
+    display: none;
+  }
+
+  .header-socials {
+    display: flex;
+  }
+}
+
+
